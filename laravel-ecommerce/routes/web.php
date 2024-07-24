@@ -15,7 +15,7 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'redirect']);
 
 Route::middleware([
     'auth:sanctum',
@@ -32,3 +32,5 @@ route::get('/redirect', [HomeController::class,'redirect']);
 route::get('/view_category', [AdminController::class, 'category']);
 
 route::post('/add_category', [AdminController::class, 'add_category']);
+
+route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);

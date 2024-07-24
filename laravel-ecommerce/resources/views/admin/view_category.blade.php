@@ -12,6 +12,13 @@
             font-size: 40px;
             padding-bottom: 40px;
         }
+
+        .center {
+          margin:auto;
+          width: 50%;
+          text-align: center;
+          margin-top: 30px;
+        }
     </style>
   </head>
   <body>
@@ -33,14 +40,26 @@
                 @endif
                 <div class="text-center pt-4">
                     
-                    <h2 class="h2_category">Add Category</h2>
+                    <h2 class="h2_category">Category Lists</h2>
 
                     <form action="{{url('/add_category')}}" method="POST">
                         @csrf
-                        <input style="color: black;" type="text" name="category_name" placeholder="Write category name">
-                        <input type="submit" class="btn btn-primary" name="submit" value="Add Category">
+                        <input style="color: black;" type="text" name="category_name" placeholder="Write category name"> <br>
+                        <input type="submit" class="btn btn-primary mt-3" name="submit" value="Add Category">
                     </form>
                 </div>
+                <table class="table center">
+                  <tr>
+                    <td>Category Name</td>
+                    <td>Action</td>
+                  </tr>
+                  @foreach($categories as $category)
+                  <tr>
+                    <td>{{$category->category_name}}</td>
+                    <td><a onclick="return confirm('Delete this Category? ')" class="btn btn-danger" href="{{url('/delete_category', $category->id)}}">Delete</a></td>
+                  </tr>
+                  @endforeach
+                </table>
             </div>
          </div>
     <!-- container-scroller -->
