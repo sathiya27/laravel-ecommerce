@@ -59,7 +59,10 @@
                             <td>{{$product->price}}</td>
                             <td>{{$product->discount_price}}</td>
                             <td class="image-row"><img class="img-fluid h-100 w-auto mx-auto" style="border-radius: 0;" src="/product/{{$product->image}}" alt=""></td>
-                            <td><a class="btn btn-danger p-2" onclick="return confirm('Confirm delete product {{$product->title}}?')" href="{{route('delete_product', $product->id)}}">Delete</a></td>
+                            <td>
+                                <a class="btn btn-danger p-2 mr-2" onclick="return confirm('Confirm delete product {{$product->title}}?')" href="{{route('delete_product', $product->id)}}">Delete</a>
+                                <a class="btn btn-primary p-2" href="{{route('update-product', $product->id)}}" >Update</a>
+                            </td>
                         </tr>
                         @endforeach
                 </table>
