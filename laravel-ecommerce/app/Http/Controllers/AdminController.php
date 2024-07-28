@@ -50,6 +50,12 @@ class AdminController extends Controller
     }
 
     public function view_products(){
-        return view('admin.view_products');
+        $products = Product::all();
+        return view('admin.view_products', compact('products'));
+    }
+
+    public function delete_product(Product $product){
+        $product->delete();
+        return redirect()->back()->with('message', 'product deleted successfully.');
     }
 }
