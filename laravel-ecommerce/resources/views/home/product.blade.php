@@ -11,8 +11,8 @@
                      <div class="box">
                         <div class="option_container">
                            <div class="options">
-                              <a href="" class="option1">
-                              {{ $product->title}}
+                              <a href="{{route('product-details', $product->id)}}" class="option1">
+                                 Product Details
                               </a>
                               <a href="" class="option2">
                               Buy Now
@@ -35,11 +35,7 @@
                               <h6>
                                  RM {{ $product->price }}
                               </h6>
-
-
                            @endif
-
-                           
                         </div>
                      </div>
                   </div>

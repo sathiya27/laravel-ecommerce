@@ -28,4 +28,9 @@ class HomeController extends Controller
         }
     }
 
+    public function product_details(Product $product)
+    {
+        return view('home.product_details', compact('product'));
+    }
+
 }

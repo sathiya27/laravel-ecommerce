@@ -46,3 +46,5 @@ route::get('/delete_product/{product}', [AdminController::class, 'delete_product
 route::get('/update_product/{product}', [AdminController::class, 'update_product'])->name('update-product');
 
 route::post('/update_product_data/{product}', [AdminController::class, 'update_product_data'])->name('update-product-data');
+
+route::get('/product_details/{product}', [HomeController::class, 'product_details'])->name('product-details');
