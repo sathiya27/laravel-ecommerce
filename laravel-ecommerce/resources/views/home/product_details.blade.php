@@ -74,7 +74,17 @@
              </div>
             </div>
             <div class="d-flex justify-content-center mt-2 mb-3">
-                <button class="btn btn-primary">Add to cart</button>
+                <form action="{{route('add-cart', $product->id)}}" method="Post">
+                    @csrf
+                    <div class="row">
+                    <div class="col-md-4">
+                        <input type="number" name="quantity" value="1" min="1" style="width: 100px;">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="submit" value="Add To Cart">
+                    </div>
+                    </div>
+                </form>
             </div>
        </div>
       
